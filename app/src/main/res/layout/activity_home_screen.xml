@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".homeScreen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="340dp"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/icon1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon1" />
+
+        <ImageButton
+            android:id="@+id/icon2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="220dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon3" />
+
+        <ImageButton
+            android:id="@+id/icon4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon4" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon5" />
+
+        <ImageButton
+            android:id="@+id/icon6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon6" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="470dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp">
+
+        <ImageButton
+            android:id="@+id/icon0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#F50057"
+            android:baselineAligned="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon0" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/icon7" />
+
+
+</RelativeLayout>

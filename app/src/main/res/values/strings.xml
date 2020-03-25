@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Emergency App</string>
+    <string name="linkedInPZ">
+        <a href = "https://www.linkedin.com/in/pz1971/">
+            LinkedIn
+        </a>
+    </string>
+    <string name="gitHubPZ">
+        <a href = "https://github.com/pz1971">
+            GitHub
+        </a>
+    </string>
 </resources>

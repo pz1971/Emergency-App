@@ -96,7 +96,8 @@ public class homeScreen extends AppCompatActivity {
         ((ImageButton)findViewById(R.id.infoButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(homeScreen.this, info_window.class) ;
+                startActivity(i);
             }
         });
     }

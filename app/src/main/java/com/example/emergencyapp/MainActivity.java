@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent i3 = new Intent(MainActivity.this, homeScreen.class);
                 startActivity(i3);
             }
-        }, 2000);   // auto opens home screen after 2 seconds
+        }, 1000);   // auto opens home screen after 1 second
     }
 }

@@ -2,6 +2,7 @@ package com.example.emergencyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -23,7 +24,8 @@ public class info_window extends AppCompatActivity {
         guide_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(info_window.this, app_guide.class) ;
+                startActivity(i);
             }
         });
     }

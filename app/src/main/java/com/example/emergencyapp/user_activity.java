@@ -17,6 +17,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+
 public class user_activity extends AppCompatActivity {
     protected EditText name, guardian_name, guardian_contact, blood_group, address, birthday ;
     protected ImageButton call_guardian, edit_button ;
@@ -29,11 +35,11 @@ public class user_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
-        initialize_widgets();
+        initialize_widgets();       // initialized all the widgets, assignes view by id and sets initial states
         dp.setClickable(false);
     }
 
-    void change_clickable(boolean flag){
+    void change_clickable(boolean flag){    // if flag is true, all the widgets will be clickable
         if(flag){
             name.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
             guardian_name.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
@@ -72,6 +78,8 @@ public class user_activity extends AppCompatActivity {
 
         change_clickable(false);
 
+        set_all_data() ;
+
         call_guardian.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -98,6 +106,7 @@ public class user_activity extends AppCompatActivity {
                 save_button.setVisibility(View.INVISIBLE);
                 edit_button.setVisibility(View.VISIBLE);
                 change_clickable(false);
+                store_all_data();
             }
         });
 
@@ -112,7 +121,67 @@ public class user_activity extends AppCompatActivity {
         });
     }
 
-    private void dialContactPhone(final String phoneNumber) {
+    protected void store_all_data(){
+        String text ;
+
+        try{
+            FileOutputStream fos = openFileOutput("em_app_data.txt", getApplicationContext().MODE_PRIVATE) ;
+
+            text = "0" +  name.getText().toString() + "\n";
+            fos.write(text.getBytes());
+            text = "1" + guardian_name.getText().toString() + "\n";
+            fos.write(text.getBytes());
+            text = "2" + guardian_contact.getText().toString() + "\n";
+            fos.write(text.getBytes());
+            text = "3" + blood_group.getText().toString() + "\n";
+            fos.write(text.getBytes());
+            text = "4" + address.getText().toString() + "\n";
+            fos.write(text.getBytes());
+            text = "5"+ birthday.getText().toString() + "\n";
+            fos.write(text.getBytes());
+
+            fos.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    protected void set_all_data(){
+        try{
+            FileInputStream fis = openFileInput("em_app_data.txt") ;
+            InputStreamReader isr = new InputStreamReader(fis) ;
+            BufferedReader buffer = new BufferedReader(isr) ;
+
+            String line ;
+            while((line = buffer.readLine()) != null){
+                switch (line.charAt(0)){
+
+                    case '0':
+                        name.setText(line.substring(1));
+                        break ;
+                    case '1':
+                        guardian_name.setText(line.substring(1));
+                        break ;
+                    case '2':
+                        guardian_contact.setText(line.substring(1));
+                        break ;
+                    case '3':
+                        blood_group.setText(line.substring(1));
+                        break ;
+                    case '4':
+                        address.setText(line.substring(1));
+                        break ;
+                    case '5':
+                        birthday.setText(line.substring(1));
+                        break ;
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void dialContactPhone(final String phoneNumber) {   // dials a number
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
     @Override

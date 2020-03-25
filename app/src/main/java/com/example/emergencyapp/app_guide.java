@@ -2,7 +2,9 @@ package com.example.emergencyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -67,7 +69,27 @@ public class app_guide extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 img5.setVisibility(View.GONE);
-                app_guide.super.onBackPressed();
+
+                Bundle bundle = getIntent().getExtras();
+                if(bundle != null){
+                    boolean flag = bundle.getBoolean("flag") ;
+
+                    if(flag == false){
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                finish();
+                                Intent i ;
+                                i = new Intent(app_guide.this, homeScreen.class);
+                                startActivity(i);
+                            }
+                        }, 5);
+                    }
+                    else
+                        app_guide.super.onBackPressed();
+                }
+                else
+                    app_guide.super.onBackPressed();
             }
         });
     }
